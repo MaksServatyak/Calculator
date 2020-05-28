@@ -5,4 +5,4 @@ import kotlinx.android.parcel.Parcelize
 
 
 @Parcelize
-data class HistoryListAction(val listAction: MutableList<String>) : Parcelable
+data class HistoryListAction(val listAction: MutableList<String>, val listAnswer: MutableList<String>) : Parcelable

@@ -16,8 +16,11 @@
             android:ellipsize="end"
             android:textSize="30sp"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:fontFamily="sans-serif-medium" android:textStyle="bold"
-            android:textAllCaps="false" android:textAlignment="center" android:text="@string/empty"/>
+            android:fontFamily="sans-serif-medium"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:textAlignment="center"
+            android:text="@string/empty"/>
     <Button
             android:text="@string/clear_history"
             android:layout_gravity="bottom"

@@ -18,15 +18,12 @@ class HistoryActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
-        val historyClassAction = intent.extras?.getParcelable<HistoryListAction>("historyAction")
-        val historyClassAnswer = intent.extras?.getParcelable<HistoryListAnswer>("historyAnswer")
-        val historylistAnswer = historyClassAnswer?.listAnswer
-        val historylistAction = historyClassAction?.listAction
-        val text: MutableList<String> = mutableListOf()
-        for (i in 0 until (historylistAnswer?.size ?: 0)) {
-            text.add("${historylistAction?.get(i).toString()}=${historylistAnswer?.get(i).toString()}")
-        }
-        history_text.text = historylistAction?.let { historylistAnswer?.let { it1 -> concatResults(it, it1) } }
+        val historyClass = intent.extras?.getParcelable<HistoryListAction>("history")
+        val historyListAnswer = historyClass?.listAnswer
+        val historyListAction = historyClass?.listAction
+        history_text.text = historyListAction?.let { historyListAnswer?.let { it1 -> concatResults(it, it1) } }
+
+
         btn_clear.setOnClickListener {
             val intent = Intent(applicationContext, MainActivity::class.java)
             startActivity(intent)

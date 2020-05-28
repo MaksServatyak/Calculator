@@ -79,8 +79,7 @@ class MainActivity : AppCompatActivity() {
     private fun showHistory() {
 
         val intent = Intent(applicationContext, HistoryActivity::class.java)
-        intent.putExtra("historyAction", HistoryListAction(historyAction))
-        intent.putExtra("historyAnswer", HistoryListAnswer(historyAnswer))
+        intent.putExtra("history", HistoryListAction(historyAction, historyAnswer))
         startActivity(intent)
     }
 }
