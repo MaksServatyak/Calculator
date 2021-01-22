@@ -6,7 +6,7 @@
         android:layout_height="match_parent"
         android:background="@android:color/background_dark"
         android:orientation="vertical"
-        tools:context=".MainActivity">
+        tools:context=".calculator.MainActivity">
     <TextView
             android:id="@+id/history_text"
             android:layout_width="match_parent"
