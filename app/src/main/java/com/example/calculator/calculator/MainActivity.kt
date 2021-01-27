@@ -38,11 +38,11 @@ class MainActivity : AppCompatActivity(), CalculatorView.View {
         btn_8.setOnClickListener { presenter.setTextFields("8", result_text.text.toString()) }
         btn_9.setOnClickListener { presenter.setTextFields("9", result_text.text.toString()) }
         btn_0.setOnClickListener { presenter.setTextFields("0", result_text.text.toString()) }
-        btn_divide.setOnClickListener {presenter.setTextFields("/", result_text.text.toString()) }
+        btn_divide.setOnClickListener { presenter.setTextFields("/", result_text.text.toString()) }
         btn_minus.setOnClickListener { presenter.setTextFields("-", result_text.text.toString()) }
         btn_plus.setOnClickListener { presenter.setTextFields("+", result_text.text.toString()) }
         btn_multiply.setOnClickListener { presenter.setTextFields("*", result_text.text.toString()) }
-        btn_point.setOnClickListener {presenter.setTextFields(".", result_text.text.toString()) }
+        btn_point.setOnClickListener { presenter.setTextFields(".", result_text.text.toString()) }
         btn_History.setOnClickListener {
             showHistory()
         }
@@ -52,6 +52,9 @@ class MainActivity : AppCompatActivity(), CalculatorView.View {
             historyAction.add(math_operation.text.toString())
 
             try {
+//                if (result_text.toString()[(result_text.lastIndex)].equals(0)){
+//                    result_text.text="You are stupid"
+//                }
                 val ex = ExpressionBuilder(math_operation.text.toString()).build()
                 val result = ex.evaluate()
                 val longRes = result.toLong()
@@ -64,6 +67,8 @@ class MainActivity : AppCompatActivity(), CalculatorView.View {
 
                 }
             } catch (e: Exception) {
+                result_text.text = "can't be divided by 0"
+                historyAnswer.add("error")
                 Log.d("Помилка", "повідомлення:${e.message}")
             }
         }
