@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         android:background="@android:color/background_dark"
         android:orientation="vertical"
-        tools:context=".MainActivity">
+        tools:context=".calculator.MainActivity">
 
     <TextView
             android:id="@+id/math_operation"
@@ -18,7 +18,7 @@
             android:ellipsize="start"
             android:textSize="40sp"
             android:singleLine="true"
-    />
+            android:fontFamily="sans-serif" android:textAlignment="viewEnd"/>
     <TextView
             android:id="@+id/result_text"
             android:layout_width="match_parent"
@@ -47,7 +47,7 @@
                     style="@style/ActionButton"
                     android:id="@+id/btn_plus"
                     android:text="+"
-            />
+                    android:layout_weight="1"/>
             <TextView
                     style="@style/ActionButton"
                     android:id="@+id/btn_multiply"
@@ -66,7 +66,7 @@
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp">
-             <TextView
+            <TextView
                     style="@style/NumberButton"
                     android:id="@+id/btn_1"
                     android:text="1"
@@ -147,6 +147,11 @@
                 android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp">
+            <Button
+                    style="@style/ActionButton"
+                    android:id="@+id/btn_History"
+                    android:text="@string/view_history"
+                    android:textAllCaps="false" android:textAlignment="center"/>
             <TextView
                     style="@style/ActionButton"
                     android:id="@+id/btn_delete"
@@ -155,7 +160,6 @@
 
 
         </LinearLayout>
-
 
 
     </LinearLayout>
